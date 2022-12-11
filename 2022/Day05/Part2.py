@@ -14,8 +14,6 @@ for i in range(1, len(crates[0]) - 1, 4):
             stack.insert(0, crates[j][i])
     stacks.append(stack)
 
-print(stacks)
-
 for move in movement.split('\n'):
     s, f, t = [int(x) for x in move.split() if x.isdigit()]
     items = []
