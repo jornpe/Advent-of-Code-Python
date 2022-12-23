@@ -7,7 +7,7 @@ count = 0
 
 for line in lines:
     min, max, char, password = re.split(r'[\W]+', line, 3)
-    if int(min) <= password.count(char) <= int(max):
+    if int(min) <= password.count_rocks(char) <= int(max):
         count+=1
 
 print(count)
