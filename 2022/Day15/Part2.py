@@ -4,7 +4,10 @@ with open("input.txt") as f:
     inputs = [i for i in f.read().split('\n')]
 
 beacons = []
-area = set()
+q1 = set()
+q2 = set()
+q3 = set()
+q4 = set()
 
 
 def parse_sensor(line: str):
@@ -16,39 +19,22 @@ def parse_sensor(line: str):
     return (sx, sy), (bx, by)
 
 
-def get_area(s: tuple, b: tuple):
-    test = set()
-    l = abs(s[0] - b[0]) + abs(s[1] - b[1])
-    for q in [[1, 1], [-1, 1], [-1, -1], [1, -1]]:
-        for i in range(0, min(l + 1, 4000001)):
-            for j in range(0, min(l + 1 - i, 4000001)):
-                current = (s[0] + (j * q[0]), s[1] + (i * q[1]))
-                test.add(current)
-                area.add((s[0] + (j * q[0]), s[1] + (i * q[1])))
-
-
-def get_positions(s: tuple, b: tuple):
-    line = 2000000
-    l = abs(s[0] - b[0]) + abs(s[1] - b[1])
-    offset = l - abs(s[1] - line)
-
-    if s[1] < line < s[1] + l:
-        for i in range(s[0] - offset, s[0] + offset + 1):
-            area.add((i, line))
-
-    elif s[1] > line > s[1] - l:
-        for i in range(s[0] - offset, s[0] + offset + 1):
-            area.add((i, line))
+def get_edges(s: tuple, b: tuple):
+    l = abs(s[0] - b[0]) + abs(s[1] - b[1]) + 1
+    for i in range(l, 0, -1):
+        q1.add((s[0] + l - i, s[1] - i))
+    for i in range(l, 0, -1):
+        q2.add((s[0] + i, s[1] + l - i))
+    for i in range(l, 0, -1):
+        q3.add((s[0] - l + i, s[1] + i))
+    for i in range(l, 0, -1):
+        q4.add((s[0] - i, s[1] - l + i))
 
 
 for input in inputs:
-    sensor, beacon = parse_sensor(input)
-    print(sensor, beacon)
-    get_area(sensor, beacon)
+    s, b = parse_sensor(input)
+    get_edges(s, b)
 
-for x in range(0, 4000001):
-    for y in range(0, 4000001):
-        area.add((x, y))
-        if (x, y) not in area:
-            print(x, y)
-
+for c in q1:
+    if c in q2 and c in q3 and c in q4:
+        print((c[0] * 4000000) + c[1])
