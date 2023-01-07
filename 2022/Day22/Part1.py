@@ -77,5 +77,3 @@ match direction:
     case _: facing_value = 3
 
 print((1000 * (position[0] + 1)) + (4 * (position[1] + 1)) + facing_value)
-
-# 104056 is too high
