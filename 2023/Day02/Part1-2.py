@@ -8,8 +8,7 @@ part1 = 0
 part2 = 0
 
 for game_id, game in enumerate(games, 1):
-    draws = game.split(':')[1]
-    colors = re.findall(r'(\d+) (blue|red|green)', draws)
+    colors = re.findall(r'(\d+) (blue|red|green)', game)
 
     red = max([int(r[0]) for r in colors if r[1] == 'red'])
     blue = max([int(r[0]) for r in colors if r[1] == 'blue'])
