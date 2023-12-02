@@ -12,7 +12,7 @@ def get_digits(input_line: str):
     returnValue = ''
     for idx, char in enumerate(input_line):
         for number in numbers:
-            if input_line[idx:].startswith(number[0]) or input_line[idx:].startswith(number[1]):
+            if input_line[idx:].startswith(number):
                 returnValue += number[1]
                 continue
 
