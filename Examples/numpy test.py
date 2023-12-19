@@ -5,9 +5,9 @@ import numpy as np
 array = []
 index = 0
 
-for _ in range(5):
+for _ in range(3):
     line = []
-    for _ in range(10):
+    for _ in range(3):
         line.append(index)
         index += 1
     array.append(line)

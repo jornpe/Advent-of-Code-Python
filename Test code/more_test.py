@@ -1,6 +1,7 @@
 # Map function
 from collections import Counter
 from itertools import cycle
+from shapely import Polygon
 
 bools = [True, False, True, True]
 print(list(map(lambda x: not x, bools)))
@@ -40,5 +41,28 @@ pos = (3, 2)
 pos2 = pos + (1, 0)
 print(pos2)
 
+test = [3, 4]
+print(test[-3::])
+
+from queue import PriorityQueue
+pq = PriorityQueue()
+
+pq.put((1, 'test', '1'))
+pq.put((2, 'test', '2'))
+pq.put((2, 'test', '2'))
+pq.put((4, 'test', '3'))
+pq.put((3, 'test', '4'))
+
+print(pq.get())
+print(pq.get())
+print(pq.qsize())
+
+print('Shaply')
+coords = ((0, 0), (0, 2), (2, 2), (2, 0))
+polygon = Polygon(coords)
+print(polygon.area)
 
 
+test = [1,2,3,4,5]
+
+print(test[:1])

@@ -1,11 +1,13 @@
 # # from treelib import Node, Tree
 # import itertools as it
-# import numpy as np
+import numpy as np
+import itertools
 
-test = 'eightwothree'
+test = {}
 
-print(test[1:])
+test[1] = {1:'a'}
 
+pass
 
 # #
 # # print(str(101).zfill(4)[-3])
