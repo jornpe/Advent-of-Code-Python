@@ -3,11 +3,9 @@
 import numpy as np
 import itertools
 
-test = {}
-
-test[1] = {1:'a'}
-
-pass
+state = {1: True}
+allhigh = not all(p for p in state.values())
+print(allhigh)
 
 # #
 # # print(str(101).zfill(4)[-3])

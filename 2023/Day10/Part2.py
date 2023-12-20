@@ -1,5 +1,7 @@
 from pathlib import Path
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     rows = [line for line in f.read().split('\n')]
 
@@ -127,4 +129,4 @@ for row in range(0, len(expanded), 2):
         if (row, col) in trapped and (row, col + 1) in trapped:
             answer += 1
 
-print(f'⭐⭐ Part 2: {answer}')
+print(f'⭐⭐ Part 2: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

@@ -2,7 +2,9 @@ import math
 from itertools import cycle
 from pathlib import Path
 import re
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     lines = [line for line in f.read().split('\n\n')]
 
@@ -28,4 +30,4 @@ for start in positions:
 
 
 answer = math.lcm(*steps)
-print(f'⭐⭐ Part 2: {answer}')
+print(f'⭐⭐ Part 2: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

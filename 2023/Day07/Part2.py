@@ -1,6 +1,8 @@
 from pathlib import Path
 from collections import Counter
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     lines = [line for line in f.read().split('\n')]
 
@@ -115,4 +117,4 @@ for hand in fiveofakind:
     answer += rank * hand[1]
     rank += 1
 
-print(f'⭐ Part 1: {answer}')
+print(f'⭐ Part 1: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

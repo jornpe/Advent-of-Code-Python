@@ -1,6 +1,8 @@
 from pathlib import Path
 import numpy as np
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     map = [[c for c in list(line)] for line in f.read().splitlines()]
 
@@ -46,4 +48,4 @@ def get_answer(map: list) -> int:
 
 
 answer = get_answer(map)
-print(f'⭐⭐ Part 2: {answer}')
+print(f'⭐⭐ Part 2: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

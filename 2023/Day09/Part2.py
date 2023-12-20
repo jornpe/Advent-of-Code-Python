@@ -1,6 +1,8 @@
 from itertools import pairwise
 from pathlib import Path
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     histories = [line for line in f.read().split('\n')]
 
@@ -23,4 +25,4 @@ for history in histories:
 
 
 
-print(f'⭐⭐ Part 2: {answer}')
+print(f'⭐⭐ Part 2: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

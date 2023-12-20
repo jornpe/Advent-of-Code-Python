@@ -1,6 +1,8 @@
 from pathlib import Path
 import re
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     steps = f.read().split(',')
 
@@ -37,4 +39,4 @@ for boxnumber, box in boxes.items():
     for slot, (label, length) in enumerate(box, 1):
         focalpower += (boxnumber + 1) * slot * int(length)
 
-print(f'⭐⭐ Part 2: {focalpower}')
+print(f'⭐⭐ Part 2: {focalpower}, run time: {int((time.time() - start_time) * 1000)}ms')

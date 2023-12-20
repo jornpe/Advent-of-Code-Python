@@ -1,6 +1,8 @@
 from pathlib import Path
 import re
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     inputs = [line for line in f.read().split('\n\n')]
 
@@ -23,4 +25,4 @@ for seed in seeds:
     locations.append(get_location(seed))
 
 answer = min(locations)
-print(f'⭐ Part 1: {answer}')
+print(f'⭐ Part 1: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

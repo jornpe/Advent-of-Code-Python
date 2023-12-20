@@ -1,5 +1,8 @@
 from pathlib import Path
 import re
+import time
+
+start_time = time.time()
 
 with open(Path(__file__).with_name('input.txt')) as f:
     games = [line for line in f.read().split('\n')]
@@ -21,4 +24,4 @@ for game_id, game in enumerate(games, 1):
 
 
 print(f'⭐ Part 1: {part1}')
-print(f'⭐⭐ Part 2: {part2}')
+print(f'⭐⭐ Part 2: {part2}, run time: {int((time.time() - start_time) * 1000)}ms')

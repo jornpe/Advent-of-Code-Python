@@ -1,6 +1,8 @@
 from pathlib import Path
 from itertools import pairwise
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     patterns = [line.split() for line in f.read().split('\n\n')]
 
@@ -20,4 +22,4 @@ for pattern in patterns:
     answer += vertical + horizontal
 
 
-print(f'⭐ Part 1: {answer}')
+print(f'⭐ Part 1: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

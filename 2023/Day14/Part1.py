@@ -1,5 +1,7 @@
 from pathlib import Path
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     lines = [line for line in f.read().splitlines()]
 
@@ -25,4 +27,4 @@ while rollingrocks:
 answer = sum(len(lines) - row for row, col in steadyrocks)
 
 
-print(f'⭐ Part 1: {answer}')
+print(f'⭐ Part 1: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

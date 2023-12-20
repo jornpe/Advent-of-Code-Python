@@ -2,7 +2,6 @@ from pathlib import Path
 import time
 
 start_time = time.time()
-
 with open(Path(__file__).with_name('test.txt')) as f:
     lines = [line for line in f.read().split('\n')]
 

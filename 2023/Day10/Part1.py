@@ -1,5 +1,7 @@
 from pathlib import Path
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     rows = [line for line in f.read().split('\n')]
 
@@ -54,4 +56,4 @@ while not loopclosed:
 
 
 answer = int(steps / 2)
-print(f'⭐ Part 1: {answer}')
+print(f'⭐ Part 1: {answer}, run time: {int((time.time() - start_time) * 1000)}ms')

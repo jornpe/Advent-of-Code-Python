@@ -1,6 +1,8 @@
 from pathlib import Path
 import re
+import time
 
+start_time = time.time()
 with open(Path(__file__).with_name('input.txt')) as f:
     cards = [line.split(':')[1] for line in f.read().split('\n')]
 
@@ -15,4 +17,4 @@ for card_idx, card in enumerate(cards):
         score += pow(2, len(overlapping) - 1)
 
 
-print(f'⭐ Part 1: {score}')
+print(f'⭐ Part 1: {score}, run time: {int((time.time() - start_time) * 1000)}ms')
