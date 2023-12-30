@@ -1,6 +1,6 @@
 from itertools import groupby
 
-with open("test.txt") as f:
+with open("input.txt") as f:
     input = f.read()
 
 groups = input.split('\n\n')

@@ -5,6 +5,7 @@ with open("input.txt") as f:
 
 highest = 0
 occupied = {}
+ids = set()
 
 for line in lines:
 
@@ -26,10 +27,18 @@ for line in lines:
 
     if rowsUpper in occupied:
         occupied[rowsUpper].append(colUpper)
+        ids.add((rowsLower * 8) + colUpper)
     else:
         occupied[rowsUpper] = [colUpper]
+        ids.add((rowsLower * 8) + colUpper)
 
+answer = 0
 for row, col in occupied.items():
     if len(col) != 8:
-        print(row)
+        for seat in [r for r in [0, 1, 2, 3, 4, 5, 6, 7] if r not in col]:
+            seatid = row * 8 + seat
+            if seatid - 1 in ids and seatid + 1 in ids:
+                answer = seatid
+
+print(f'⭐⭐ Part 2: {answer}')
 
