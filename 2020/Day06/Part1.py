@@ -9,4 +9,4 @@ answer = 0
 for group in groups:
     answer += len(set(group.replace('\n', '')))
 
-print(answer)
+print(f'⭐ Part 1: {answer}')
