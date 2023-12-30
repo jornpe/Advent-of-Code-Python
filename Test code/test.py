@@ -3,9 +3,21 @@
 import numpy as np
 import itertools
 
-state = {1: True}
-allhigh = not all(p for p in state.values())
-print(allhigh)
+s1 = set()
+s2 = set()
+s1.add((0, 0))
+s1.add((1, 0))
+s1.add((2, 0))
+s1.add((3, 0))
+
+s2.add((4, 0))
+s2.add((5, 0))
+s2.add((1, 0))
+s2.add((2, 0))
+
+s3 = s1.union(s2)
+
+print(s3)
 
 # #
 # # print(str(101).zfill(4)[-3])

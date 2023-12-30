@@ -63,6 +63,4 @@ polygon = Polygon(coords)
 print(polygon.area)
 
 
-test = [1,2,3,4,5]
-
-print(test[:1])
+print('a'.upper())
