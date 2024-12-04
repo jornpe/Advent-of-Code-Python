@@ -3,6 +3,10 @@
 import numpy as np
 import itertools
 
+test = (8000 / 4000) - 1
+print(test)
+
+
 s1 = set()
 s2 = set()
 s1.add((0, 0))
