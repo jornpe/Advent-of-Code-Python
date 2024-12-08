@@ -10,7 +10,7 @@ left, right = zip(*lines)
 distance = 0
 
 for l, r in zip(sorted(left), sorted(right)):
-    distance += max(l, r) - min(l, r)
+    distance += abs(l - r)
 
 answer = distance
-print(f'⭐⭐ Part 2: {answer} ; run time: {int((time.time() - start_time) * 1000)}ms')
+print(f'⭐⭐ Part 1: {answer} ; run time: {int((time.time() - start_time) * 1000)}ms')
