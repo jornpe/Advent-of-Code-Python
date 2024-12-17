@@ -1,7 +1,6 @@
 import re
 from pathlib import Path
 import time
-
 import sympy
 from sympy import Eq
 

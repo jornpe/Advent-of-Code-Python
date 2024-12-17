@@ -1,4 +1,3 @@
-from collections import defaultdict
 from pathlib import Path
 import time
 from sympy import Point2D

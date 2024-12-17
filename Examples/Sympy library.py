@@ -5,6 +5,8 @@
 # To do this we generate first the unknown symbols, then import each hail, then create the equations.
 # this has to be done for at leat 3 hails, here we do it for all. Then we get the rock position and speed.
 
+# can also see 2024 day 13 part 2 as an example
+
 from pathlib import Path
 import time
 import re
