@@ -1,0 +1,46 @@
+y00 AND x00 -> rnv rnv AND rbr -> nbf
+x01 AND y01 -> hqp                      hqp OR nbf -> gbw gbw XOR vjb -> z02
+x01 XOR y01 -> rbr
+x02 XOR y02 -> vjb
+
+
+z00 = y00 XOR x00
+z01 = x01 XOR y01 XOR y00 AND x00
+--------------------------------
+
+y00 XOR x00 -> z00
+y00 AND x00 -> cout
+
+(x01 XOR y01) XOR (y00 AND x00) -> z01
+(x01 AND y01) OR ((y00 AND x00) AND (x01 XOR y01)) -> cout
+
+((x01 AND y01) OR ((y00 AND x00) AND (x01 XOR y01))) XOR (x02 XOR y02) = z02
+(x03 XOR y03) XOR ((x02 AND y02) OR ((x02 XOR y02) AND ((x01 AND y01) OR ((y00 AND x00) AND (x01 XOR y01))))) = z03
+
+
+
+SUM = A XOR B XOR Cin
+Cout = (A AND B) OR (Cin AND (A XOR B))
+
+
+
+
+
+
+
+'x00 XOR y00'
+'x00 AND y00 XOR x01 XOR y01'
+'x00 AND y00 AND x01 XOR y01 OR x01 AND y01 XOR x02 XOR y02'
+'x00 AND y00 AND x01 XOR y01 OR x01 AND y01 AND x02 XOR y02 OR x02 AND y02 XOR x03 XOR y03'
+'x00 AND y00 AND x01 XOR y01 OR x01 AND y01 AND x02 XOR y02 OR x02 AND y02 AND x03 XOR y03 OR x03 AND y03 XOR x04 XOR y04'
+
+
+
+
+
+
+
+
+
+
+
